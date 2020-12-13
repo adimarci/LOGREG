@@ -22,14 +22,9 @@ public class LoggedInActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_logged_in);
-
         init();
         String nev = sharedPref.getString("nev","");
-        StringBuilder builder = new StringBuilder();
-        Cursor adatok = db.adatLekerdezes();
-
         nevtxt.setText("Üdvözöllek: "+nev);
-
         kijelentkezes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
